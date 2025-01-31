@@ -33,15 +33,17 @@ const headerStyles = StyleSheet.create({
     width: 80,
     height: "100%",
     borderRadius: 20,
-    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    gap: 6,
   },
 
   languageViewStyle: {
     width: "40%",
     height: "70%",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 6,
   },
 
   languageImageStyle: {

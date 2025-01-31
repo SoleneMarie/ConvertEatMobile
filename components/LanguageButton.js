@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { View, Text, Pressable, Image, Animated } from "react-native";
+import { Text, TouchableHighlight, View, Image } from "react-native";
 import { colors } from "../styles/colors";
 
 const LanguageButton = ({
@@ -12,30 +11,9 @@ const LanguageButton = ({
   languageImageStyle,
   languageLangStyle,
 }) => {
-  // setOpacity n'est pas nécessaire ici car la valeur est manipulée directement dans l'animation.
-  const [opacity] = useState(new Animated.Value(1));
-  // Animations lorsque le bouton est pressé puis relâché.
-  const pressIn = () => {
-    Animated.timing(opacity, {
-      toValue: 0.7,
-      duration: 200,
-      useNativeDriver: true,
-    }).start();
-  };
-
-  const pressOut = () => {
-    Animated.timing(opacity, {
-      toValue: 1,
-      duration: 200,
-      useNativeDriver: true,
-    }).start();
-  };
-
   return (
-    <Pressable
+    <TouchableHighlight
       onPress={onPress}
-      onPressIn={pressIn}
-      onPressOut={pressOut}
       style={[
         pressableStyle,
         {
@@ -43,11 +21,21 @@ const LanguageButton = ({
         },
       ]}
     >
-      <Animated.View style={[languageViewStyle, { opacity }]}>
+      <View style={languageViewStyle}>
         <Image style={languageImageStyle} source={image}></Image>
-      </Animated.View>
-      <Text style={languageLangStyle}>{language}</Text>
-    </Pressable>
+
+        <Text
+          style={[
+            languageLangStyle,
+            {
+              color: selected ? colors.secondary : colors.darkText,
+            },
+          ]}
+        >
+          {language}
+        </Text>
+      </View>
+    </TouchableHighlight>
   );
 };
 
