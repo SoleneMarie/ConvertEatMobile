@@ -1,0 +1,15 @@
+export const colors = {
+  primary: "#61b6b6",
+  secondary: "#f0f0f0",
+  button: "#8db8b8",
+  buttonHover: "#a7c9c9",
+  selectedButton: "#3a7373",
+  validation: "#65a1c1",
+  validationHover: "#7cb6d1",
+  title: "#f3a51c",
+  darkText: "#4e342e",
+  darkerText: "#3e2c1c",
+  errorMessage: "#d76e79",
+  legalMentions: "#3a404f",
+  formContent: "#7f7f7f",
+};
